@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.geometry.Insets?>
+
+<VBox xmlns="http://javafx.com/javafx"
+      xmlns:fx="http://javafx.com/fxml"
+      fx:controller="pe.edu.upeu.bibfx.controller.MainController"
+      spacing="10">
+    
+    <padding>
+        <Insets top="10" right="10" bottom="10" left="10"/>
+    </padding>
+
+    <MenuBar>
+        <Menu text="Archivo">
+            <MenuItem text="Salir" onAction="#handleExit"/>
+        </Menu>
+        <Menu text="Ayuda">
+            <MenuItem text="Acerca de" onAction="#handleAbout"/>
+        </Menu>
+    </MenuBar>
+
+    <TabPane fx:id="tabPane" VBox.vgrow="ALWAYS">
+        <Tab text="Libros" closable="false">
+            <VBox spacing="10">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="searchField" promptText="Buscar libros..." HBox.hgrow="ALWAYS"/>
+                    <Button text="Buscar" onAction="#handleSearch"/>
+                    <Button text="Nuevo Libro" onAction="#handleNewBook"/>
+                </HBox>
+                <TableView fx:id="librosTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn text="Título" fx:id="tituloColumn"/>
+                        <TableColumn text="Autor" fx:id="autorColumn"/>
+                        <TableColumn text="ISBN" fx:id="isbnColumn"/>
+                        <TableColumn text="Categoría" fx:id="categoriaColumn"/>
+                        <TableColumn text="Disponibles" fx:id="disponiblesColumn"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button text="Editar" onAction="#handleEditBook"/>
+                    <Button text="Eliminar" onAction="#handleDeleteBook"/>
+                </HBox>
+            </VBox>
+        </Tab>
+
+        <Tab text="Usuarios" closable="false">
+            <VBox spacing="10">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="searchUserField" promptText="Buscar usuarios..." HBox.hgrow="ALWAYS"/>
+                    <Button text="Buscar" onAction="#handleSearchUser"/>
+                    <Button text="Nuevo Usuario" onAction="#handleNewUser"/>
+                </HBox>
+                <TableView fx:id="usuariosTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn text="Nombre" fx:id="nombreColumn"/>
+                        <TableColumn text="Apellido" fx:id="apellidoColumn"/>
+                        <TableColumn text="DNI" fx:id="dniColumn"/>
+                        <TableColumn text="Email" fx:id="emailColumn"/>
+                        <TableColumn text="Teléfono" fx:id="telefonoColumn"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button text="Editar" onAction="#handleEditUser"/>
+                    <Button text="Eliminar" onAction="#handleDeleteUser"/>
+                </HBox>
+            </VBox>
+        </Tab>
+
+        <Tab text="Préstamos" closable="false">
+            <VBox spacing="10">
+                <HBox spacing="10" alignment="CENTER_LEFT">
+                    <TextField fx:id="searchPrestamoField" promptText="Buscar préstamos..." HBox.hgrow="ALWAYS"/>
+                    <Button text="Buscar" onAction="#handleSearchPrestamo"/>
+                    <Button text="Nuevo Préstamo" onAction="#handleNewPrestamo"/>
+                </HBox>
+                <TableView fx:id="prestamosTable" VBox.vgrow="ALWAYS">
+                    <columns>
+                        <TableColumn text="Libro" fx:id="libroColumn"/>
+                        <TableColumn text="Usuario" fx:id="usuarioColumn"/>
+                        <TableColumn text="Fecha Préstamo" fx:id="fechaPrestamoColumn"/>
+                        <TableColumn text="Fecha Devolución" fx:id="fechaDevolucionColumn"/>
+                        <TableColumn text="Estado" fx:id="estadoColumn"/>
+                    </columns>
+                </TableView>
+                <HBox spacing="10" alignment="CENTER_RIGHT">
+                    <Button text="Devolver" onAction="#handleDevolverPrestamo"/>
+                    <Button text="Ver Detalles" onAction="#handleViewPrestamoDetails"/>
+                </HBox>
+            </VBox>
+        </Tab>
+    </TabPane>
+</VBox> 
