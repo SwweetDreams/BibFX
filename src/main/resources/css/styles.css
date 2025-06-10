@@ -1,0 +1,53 @@
+/* Estilos generales */
+.root {
+    -fx-font-family: "Segoe UI", Arial, sans-serif;
+    -fx-background-color: #f4f4f4;
+}
+
+/* Estilos para botones */
+.button {
+    -fx-background-color: #007bff;
+    -fx-text-fill: white;
+    -fx-padding: 8px 16px;
+    -fx-background-radius: 4px;
+}
+
+.button:hover {
+    -fx-background-color: #0056b3;
+}
+
+/* Estilos para campos de texto */
+.text-field {
+    -fx-padding: 8px;
+    -fx-background-radius: 4px;
+    -fx-border-radius: 4px;
+    -fx-border-color: #ced4da;
+}
+
+.text-field:focused {
+    -fx-border-color: #007bff;
+}
+
+/* Estilos para tablas */
+.table-view {
+    -fx-background-color: white;
+    -fx-border-color: #dee2e6;
+}
+
+.table-view .column-header {
+    -fx-background-color: #f8f9fa;
+    -fx-border-color: #dee2e6;
+}
+
+/* Estilos para etiquetas */
+.label {
+    -fx-text-fill: #212529;
+}
+
+/* Estilos para paneles */
+.panel {
+    -fx-background-color: white;
+    -fx-padding: 16px;
+    -fx-background-radius: 8px;
+    -fx-effect: dropshadow(three-pass-box, rgba(0,0,0,0.1), 10, 0, 0, 0);
+} 
